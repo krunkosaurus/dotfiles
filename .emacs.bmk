@@ -1,0 +1,64 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org"
+  ((filename . "~/Dropbox/bin/org/")
+   (front-context-string . "flagged.org\n  -r")
+   (rear-context-string . "37 Jan  7 09:57 ")
+   (position . 267)))
+ ("index.org"
+  ((filename . "~/Dropbox/bin/org/index.org")
+   (front-context-string . "* DO NOW\n** read")
+   (rear-context-string)
+   (position . 1)))
+ (".emacs"
+  ((filename . "~/.emacs")
+   (front-context-string . ";(set-message-be")
+   (rear-context-string . "ge \"*beep*\")))\n\n")
+   (position . 683)))
+ ("phonegapdemo"
+  ((filename . "~/Documents/git/phonegapdemo/")
+   (front-context-string . ".git\n  -rw-r--r-")
+   (rear-context-string . "44 Dec 28 18:42 ")
+   (position . 273)))
+ ("readystate4 compiler"
+  ((filename . "/scp:readystate4.com:/home/krunkosaurus/readystate4.com/ws/")
+   (front-context-string . ".git\n  drwxrwxr-")
+   (rear-context-string . "88 Dec 13 23:31 ")
+   (position . 250)))
+ ("swapspace application"
+  ((filename . "/scp:sadbot.com:/home/krunkosaurus/html/swapspace.me/system/application/")
+   (front-context-string . "config\n  drwxr-x")
+   (rear-context-string . "96 Dec  1 05:11 ")
+   (position . 272)))
+ ("tap clubland controller"
+  ((filename . "/scp:newdev:/home/mauvis/server/application/controllers/clubland/clubland_controller.php")
+   (front-context-string . "<?php\nrequire_on")
+   (rear-context-string)
+   (position . 1)))
+ ("tap interstitials controller"
+  ((filename . "/scp:newdev:/home/mauvis/server/legacy/tapservices/v1/lib/Tap/Html/Interstitials.php")
+   (front-context-string . "<?\n	require_once")
+   (rear-context-string)
+   (position . 1)))
+ ("tap server"
+  ((filename . "/scp:newdev:/home/mauvis/server/")
+   (front-context-string)
+   (rear-context-string . "1:51 tapscripts\n")
+   (position . 932)))
+ ("tap server application"
+  ((filename . "/scp:newdev:/home/mauvis/server/application/")
+   (front-context-string . "controllers\n  dr")
+   (rear-context-string . "96 Dec 11 21:51 ")
+   (position . 263)))
+ ("tap server ci routing"
+  ((filename . "/scp:newdev:/home/mauvis/server/application/config/routes.php")
+   (front-context-string . "<?php  if ( ! de")
+   (rear-context-string)
+   (position . 1)))
+ ("tap server legacy"
+  ((filename . "/scp:newdev:/home/mauvis/server/legacy/")
+   (front-context-string . "clientlog\n  drwx")
+   (rear-context-string . "96 Dec 11 21:51 ")
+   (position . 371))))
