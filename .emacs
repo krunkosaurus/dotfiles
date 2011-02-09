@@ -1,3 +1,26 @@
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
+(setq tab-width 4)
+(setq-default indent-tabs-mode nil)
+(menu-bar-mode 0)
+
+(autoload 'php-mode "~/.emacs.d/site-lisp/php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(defun my-php-mode-common-hook ()
+  ;; my customizations for php-mode
+  (setq tab-width 4)
+  (setq c-basic-offset 4)
+  (c-set-offset 'topmost-intro-cont 4)
+  (c-set-offset 'class-open 0)
+  (c-set-offset 'inline-open 0)
+  (c-set-offset 'substatement-open 0)
+  (c-set-offset 'arglist-intro '+)
+  )
+(add-hook 'php-mode-hook 'my-php-mode-common-hook)
+
+
+
+
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/Dropbox/bin/org")
 ;; Set to the name of the file where new notes will be stored
@@ -35,15 +58,6 @@
 (show-paren-mode 1)
 (size-indication-mode t)
 (menu-bar-mode -1)
-
-;; load these only if using GUI emacs
-(when (display-graphic-p)
-  (global-font-lock-mode 1 t)
-  ;; disables scrollbar
-  (scroll-bar-mode -1)
-  ;; disable the top toolbar
-  (tool-bar-mode -1)
-  (display-battery-mode 1))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -139,10 +153,14 @@
  '(fringe ((t (:background "black" :foreground "gray50"))))
  '(highlight ((t (:background "#222"))))
  '(minibuffer-prompt ((((background dark)) (:foreground "dark gray"))))
- '(mode-line ((t (:background "black" :foreground "gray55"))))
+ ;; active buffer
+; '(mode-line ((t (:background "blue" :foreground "gray55"))))
+ '(mode-line ((t (:background "black" :foreground "green"))))
  '(mode-line-buffer-id ((t (:weight bold))))
  '(mode-line-highlight ((t (:inherit highlight))))
- '(mode-line-inactive ((nil (:background "black" :foreground "gray28"))))
+ ;; unactive buffers
+; '(mode-line-inactive ((nil (:background "green" :foreground "gray28"))))
+ '(mode-line-inactive ((nil (:background "black" :foreground "white"))))
  '(region ((t (:background "#111"))))
  '(scroll-bar ((t (:background "grey75" :foreground "black"))))
  '(show-paren-match ((((class color)) (:background "#232323"))))
@@ -151,6 +169,15 @@
  '(volume-bar ((t (:weight bold)))))
 
 
+;; load these only if using GUI emacs
+(when (display-graphic-p)
+  (global-font-lock-mode 1 t)
+  ;; disables scrollbar
+  (scroll-bar-mode -1)
+  ;; disable the top toolbar
+  (tool-bar-mode -1)
+  (display-battery-mode 1))
+  
 (put 'narrow-to-region 'disabled nil)
 
  (defun fullscreen (&optional f)
@@ -178,12 +205,12 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
 
-;; This tab override shouldn't be necessary given ido's default 
-;; configuration, but minibuffer-complete otherwise dominates the 
-;; tab binding because of my custom tab-completion-everywhere 
+;; This tab override shouldn't be necessary given ido's default
+;; configuration, but minibuffer-complete otherwise dominates the
+;; tab binding because of my custom tab-completion-everywhere
 ;; configuration.
-(add-hook 'ido-setup-hook 
-          (lambda () 
+(add-hook 'ido-setup-hook
+          (lambda ()
             (define-key ido-completion-map [tab] 'ido-complete)))
 
 ;; ORG MODE STUFF
@@ -217,6 +244,12 @@
 
 ;; uniquely identify buffer names
 (require 'uniquify)
+(autoload 'magit-status "magit" nil t)
+;;(require 'magit)
+
+(global-set-key "\C-ci" 'magit-status)
+(defalias 'gs 'magit-status)
+
 (setq  uniquify-buffer-name-style 'post-forward uniquify-separator ":")
 
 (add-hook 'c-mode-common-hook
@@ -226,6 +259,14 @@
 			(local-set-key (kbd "C-c <up>")    'hs-hide-all)
 			(local-set-key (kbd "C-c <down>")  'hs-show-all)
 			(hs-minor-mode t)))
+
+;; change magit diff colors
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green3")
+     (set-face-foreground 'magit-diff-del "red3")
+     (when (not window-system)
+       (set-face-background 'magit-item-highlight "black"))))
 
 (defun emacs ()
   (interactive)
@@ -246,7 +287,7 @@
 (defun tap ()
   (interactive)
   (find-file "~/Dropbox/bin/org/tapulous.org"))
-
+  
 ;; my macros
 (fset 'pipe
    [?| down left])
@@ -254,4 +295,5 @@
 (fset 'moveleft
    [?\C-  ?\C-e ?\C-w ?\C-a ?\C-y ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ? ])
 
+; in dired mode you can use 'a' instead of o to open links in same window
 (put 'dired-find-alternate-file 'disabled nil)
