@@ -1,0 +1,20 @@
+[user]
+	name = Mauvis Ledford
+	email = mauvis@tapulous.com
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+	ui = true
+[tig]
+   show-date = relative
+   author-width = 5
+   show-rev-graph = yes
+[push]
+	default = matching
+[pull]
+	default = matching
+[alias]
+	co = checkout
+[core]
+	editor = emacs
