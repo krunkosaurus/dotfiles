@@ -1,5 +1,25 @@
 alias e=/Applications/Emacs.app;export e;
 
+function dp {
+    P=`pwd`
+    cd ~/.dotfiles/
+    git commit -av
+    git push
+    cd $P
+}
+function df {
+    P=`pwd`
+    cd ~/.dotfiles/
+    git pull
+    cd $P
+}
+function ds {
+    P=`pwd`
+    cd ~/.dotfiles/
+    git diff
+    cd $P
+}
+
 EVENT_NOKQUEUE=1
 # To use PWD should be inside an artist folder in itunes to share a spec album
 function ship {
