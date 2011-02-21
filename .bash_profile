@@ -36,7 +36,7 @@ function ship {
     echo 'Created file:' \'$ZIPTITLE'.zip'\'
 
     # ship it
-    rsync -h --progress  "$ZIPTITLE".zip krunkosaurus@97.107.138.158:/home/maryann/music/albums/
+    rsync -h --progress  "$ZIPTITLE".zip krunkosaurus@97.107.138.158:/html/sadbot.com/jawili/albums/
 
     echo 'Transfer Complete.'
     #read -p "Delete zip? (y/n)?"
