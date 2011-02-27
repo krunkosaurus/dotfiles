@@ -18,3 +18,5 @@
 	co = checkout
 [core]
 	editor = emacs
+[branch]
+	autosetupmerge = true
