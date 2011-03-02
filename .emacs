@@ -18,7 +18,10 @@
   )
 (add-hook 'php-mode-hook 'my-php-mode-common-hook)
 
-
+(add-hook 'html-mode-hook
+          (lambda()
+            (setq sgml-basic-offset 4)
+            (setq indent-tabs-mode t)))
 
 
 ;; Set to the location of your Org files on your local system
