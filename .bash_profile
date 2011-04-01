@@ -1,5 +1,5 @@
 alias e=/Applications/Emacs.app;export e;
-
+alias irc="ssh -vD 6667 sadbot"
 function dp {
     P=`pwd`
     cd ~/.dotfiles/
