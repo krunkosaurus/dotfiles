@@ -287,6 +287,8 @@
 (defun tap ()
   (interactive)
   (find-file "~/Dropbox/bin/org/tapulous.org"))
+
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
   
 ;; my macros
 (fset 'pipe
