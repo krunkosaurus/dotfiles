@@ -1,8 +1,19 @@
 (setq x-select-enable-clipboard t)
+;(highlight-tabs)
+;(highlight-trailing-whitespace)
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (setq tab-width 4)
 (setq-default indent-tabs-mode nil)
+(set-default 'indicate-empty-lines t)
 (menu-bar-mode 0)
+(set-default 'imenu-auto-rescan t)
+
+; default to unified diffs
+(setq diff-switches "-u")
+; Don't clutter up directories with files~
+;(setq backup-directory-alist `(("." . ,(expand-file-name
+;                                        (concat dotfiles-dir "backups")))))
+
 
 (autoload 'php-mode "~/.emacs.d/site-lisp/php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
@@ -53,7 +64,7 @@
 (iswitchb-mode 1)
 (setq font-lock-maximum-decoration t)
 (setq show-trailing-whitespace t)
-(setq visible-bell nil)
+;(setq visible-bell nil)
 (setq ring-bell-function 'ignore-bell)
 (setq column-number-mode t)
 (setq-default transient-mark-mode t)
@@ -102,9 +113,6 @@
 (setq suggest-key-bindings t)
 (global-set-key [?\C-=] 'shrink-window-horizontally)
 (global-set-key [?\C-+] 'enlarge-window-horizontally)
-;;(global-unset-key "\C-z")
-;;(global-set-key "\C-z" 'previous-line)
-;;(global-unset-key "\C-x\C-z")
 (global-set-key [(control tab)] 'delete-backward-char)
 (global-set-key [(backtab)] 'backward-kill-word)
 ;;(global-set-key "\C-cc" 'comment-region)
@@ -127,6 +135,7 @@
 (setq auto-mode-alist (append '(("\\.htm$" . html-mode)) auto-mode-alist))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
+;; shortcut
 (defalias 'dtw 'delete-trailing-whitespace)
 
 (defun objc-mode-fixes-hook ()
@@ -175,7 +184,7 @@
 
 ;; load these only if using GUI emacs
 (when (display-graphic-p)
-  (global-font-lock-mode 1 t)
+  (global-font-lock-mode t)
   ;; disables scrollbar
   (scroll-bar-mode -1)
   ;; disable the top toolbar
@@ -224,14 +233,14 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+
 ;; already set
 (setq-default transient-mark-mode t)
+
 ;; timestamp DONE
 ;;(setq org-log-done 'time)
 
-
 (setq-default tab-width 4) ; set tab width to 4 for all buffers
-
 
 ;; Enable syntax highlighting
 ;;(global-font-lock-mode t)
@@ -240,8 +249,6 @@
 ;;(setq backup-inhibited t)
 ;;disable auto save
 (setq auto-save-default nil)
-;; Stops emacs and return to superior process
-;;(global-set-key "\C-z" 'suspend-emacs)
 
 ;; git rid of annoying welcome screen
 (setq inhibit-splash-screen t)
@@ -249,6 +256,7 @@
 ;; uniquely identify buffer names
 (require 'uniquify)
 (autoload 'magit-status "magit" nil t)
+
 ;;(require 'magit)
 
 (global-set-key "\C-ci" 'magit-status)
@@ -272,6 +280,12 @@
      (when (not window-system)
        (set-face-background 'magit-item-highlight "black"))))
 
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added "green4")
+     (set-face-foreground 'diff-removed "red3")))
+
 (defun emacs ()
   (interactive)
   (find-file "~/Dropbox/bin/org/emacs.org"))
@@ -291,8 +305,6 @@
 (defun tap ()
   (interactive)
   (find-file "~/Dropbox/bin/org/tapulous.org"))
-
-(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
   
 ;; my macros
 (fset 'pipe
