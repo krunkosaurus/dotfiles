@@ -1,5 +1,22 @@
 alias e=/Applications/Emacs.app;export e;
 alias irc="ssh -vD 6667 sadbot"
+
+# used to reattach ssh forwarding to "stale" tmux sessions 
+# http://justinchouinard.com/blog/2010/04/10/fix-stale-ssh-environment-variables-in-gnu-screen-and-tmux/
+function r() {
+  if [[ -n $TMUX ]]; then
+    NEW_SSH_AUTH_SOCK=`tmux showenv|grep ^SSH_AUTH_SOCK|cut -d = -f 2`
+    if [[ -n $NEW_SSH_AUTH_SOCK ]] && [[ -S $NEW_SSH_AUTH_SOCK ]]; then
+      SSH_AUTH_SOCK=$NEW_SSH_AUTH_SOCK
+    fi
+  fi
+}
+
+alias tmls='tmux ls'
+function tma (){
+    tmux attach -t $1
+}
+
 function dp {
     P=`pwd`
     cd ~/.dotfiles/
@@ -117,10 +134,6 @@ function ttfb {
         curl -o /dev/null -w "Connect: %{time_connect} TTFB: %{time_starttransfer} Total time: %{time_total} \n" $1
 }
 
-function r {  
-        rsync -zrpvhu --append --progress $@
-}
-  
 function sd {
 	svn diff -x --ignore-eol-style $1 | mate
 }
@@ -147,7 +160,3 @@ function sc {
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-alias tmls='tmux ls'
-    function tma (){
-        tmux attach -t $1
-}

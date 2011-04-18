@@ -1,3 +1,4 @@
+(setq x-select-enable-clipboard t)
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (setq tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -18,7 +19,10 @@
   )
 (add-hook 'php-mode-hook 'my-php-mode-common-hook)
 
-
+(add-hook 'html-mode-hook
+          (lambda()
+            (setq sgml-basic-offset 4)
+            (setq indent-tabs-mode t)))
 
 
 ;; Set to the location of your Org files on your local system
