@@ -1,5 +1,6 @@
 alias e=/Applications/Emacs.app;export e;
-alias irc="ssh -vD 6667 sadbot"
+# irc port fowarding for work around when i'm tethered
+alias irc='ssh -vD 6667 sadbot'
 
 # used to reattach ssh forwarding to "stale" tmux sessions 
 # http://justinchouinard.com/blog/2010/04/10/fix-stale-ssh-environment-variables-in-gnu-screen-and-tmux/
