@@ -1,6 +1,4 @@
 (setq x-select-enable-clipboard t)
-;(highlight-tabs)
-;(highlight-trailing-whitespace)
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (setq tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -13,7 +11,6 @@
 ; Don't clutter up directories with files~
 ;(setq backup-directory-alist `(("." . ,(expand-file-name
 ;                                        (concat dotfiles-dir "backups")))))
-
 
 (autoload 'php-mode "~/.emacs.d/site-lisp/php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
@@ -53,7 +50,7 @@
 
 (defun other-window-reverse ()
  (interactive)
- (other-window -1))  
+ (other-window -1))
 
 (setq visible-bell t)
 ;(setq ring-bell-function (lambda () (message "*beep*")))
@@ -163,7 +160,8 @@
  '(font-lock-string-face ((t (:foreground "#FC0"))))
  '(font-lock-type-face ((t (:foreground "#A9B9F9"))))
  '(font-lock-variable-name-face ((t (:foreground "yellow"))))
- '(fringe ((t (:background "black" :foreground "gray50"))))
+;; '(fringe ((t (:background "black" :foreground "gray50"))))
+ '(fringe ((t (:background "black" :foreground "blue"))))
  '(highlight ((t (:background "#222"))))
  '(minibuffer-prompt ((((background dark)) (:foreground "dark gray"))))
  ;; active buffer
@@ -172,15 +170,15 @@
  '(mode-line-buffer-id ((t (:weight bold))))
  '(mode-line-highlight ((t (:inherit highlight))))
  ;; unactive buffers
-; '(mode-line-inactive ((nil (:background "green" :foreground "gray28"))))
+;; '(mode-line-inactive ((nil (:background "green" :foreground "gray28"))))
  '(mode-line-inactive ((nil (:background "black" :foreground "white"))))
  '(region ((t (:background "#111"))))
  '(scroll-bar ((t (:background "grey75" :foreground "black"))))
  '(show-paren-match ((((class color)) (:background "#232323"))))
- '(trailing-whitespace ((((class color) (background dark)) (:background "gray18"))))
+;; '(trailing-whitespace ((((class color) (background dark)) (:background "gray18"))))
+ '(trailing-whitespace ((((class color) (background dark)) (:background "orange"))))
  '(vertical-border ((nil nil)))
  '(volume-bar ((t (:weight bold)))))
-
 
 ;; load these only if using GUI emacs
 (when (display-graphic-p)
@@ -190,7 +188,7 @@
   ;; disable the top toolbar
   (tool-bar-mode -1)
   (display-battery-mode 1))
-  
+
 (put 'narrow-to-region 'disabled nil)
 
  (defun fullscreen (&optional f)
@@ -305,7 +303,7 @@
 (defun tap ()
   (interactive)
   (find-file "~/Dropbox/bin/org/tapulous.org"))
-  
+
 ;; my macros
 (fset 'pipe
    [?| down left])
