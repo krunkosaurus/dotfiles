@@ -1,7 +1,6 @@
 alias e=/Applications/Emacs.app;export e;
 # irc port fowarding for work around when i'm tethered
 alias irc='ssh -vD 6667 sadbot'
-
 # used to reattach ssh forwarding to "stale" tmux sessions 
 # http://justinchouinard.com/blog/2010/04/10/fix-stale-ssh-environment-variables-in-gnu-screen-and-tmux/
 function r() {
@@ -54,7 +53,7 @@ function ship {
     echo 'Created file:' \'$ZIPTITLE'.zip'\'
 
     # ship it
-    rsync -h --progress  "$ZIPTITLE".zip krunkosaurus@97.107.138.158:/html/sadbot.com/jawili/albums/
+    rsync -h --progress  "$ZIPTITLE".zip sadbot:/html/sadbot.com/jawili/albums/
 
     echo 'Transfer Complete.'
     #read -p "Delete zip? (y/n)?"
