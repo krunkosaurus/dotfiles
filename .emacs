@@ -316,4 +316,4 @@
 
 '(lambda()
    (setq show-trailing-whitespace nil)
-   (term-line-mode)))
+   (term-line-mode))
