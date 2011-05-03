@@ -118,7 +118,6 @@
 (global-set-key [(control meta .)] 'end-of-buffer)
 (global-set-key [control meta \,] 'beginning-of-buffer)
 
-
 (defun other-window-reverse ()
  (interactive)
  (other-window -1))
@@ -197,7 +196,6 @@
                            (if (frame-parameter f 'fullscreen) nil 'fullboth)))
     (global-set-key [f11] 'fullscreen)
    (add-hook 'after-make-frame-functions 'fullscreen)
-
 
 ; better buffer list by jorge
 ;(defun my-buffer-list (&optional n)
