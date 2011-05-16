@@ -318,3 +318,12 @@
 
 ; in dired mode you can use 'a' instead of o to open links in same window
 (put 'dired-find-alternate-file 'disabled nil)
+
+'(lambda()
+   (setq show-trailing-whitespace nil)
+   (term-line-mode))
+
+(autoload 'markdown-mode "markdown-mode.el"
+   "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+   (cons '("\\.md" . markdown-mode) auto-mode-alist))
