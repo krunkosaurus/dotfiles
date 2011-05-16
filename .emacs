@@ -253,6 +253,13 @@
 (require 'uniquify)
 (autoload 'magit-status "magit" nil t)
 
+;; yasnippet
+(add-to-list 'load-path
+             "~/.emacs.d/site-lisp/yasnippet")
+(require 'yasnippet-bundle)
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/site-lisp/yasnippet/snippets")
+
 ;;(require 'magit)
 
 (global-set-key "\C-ci" 'magit-status)
