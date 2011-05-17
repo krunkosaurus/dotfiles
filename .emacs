@@ -323,6 +323,11 @@
    (setq show-trailing-whitespace nil)
    (term-line-mode))
 
+(defvar term-mode-hook
+  '(lambda()
+     (setq show-trailing-whitespace nil)
+     (term-line-mode)))
+
 (autoload 'markdown-mode "markdown-mode.el"
    "Major mode for editing Markdown files" t)
 (setq auto-mode-alist

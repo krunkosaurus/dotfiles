@@ -11,9 +11,9 @@
    author-width = 5
    show-rev-graph = yes
 [push]
-	default = matching
+	default = current
 [pull]
-	default = matching
+	default = current
 [alias]
 	co = checkout
 [core]
