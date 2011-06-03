@@ -294,6 +294,10 @@
   (interactive)
   (find-file "~/Dropbox/bin/org/git.org"))
 
+(defun mongo ()
+  (interactive)
+  (find-file "~/Dropbox/bin/org/mongo.org"))
+
 (defun unix ()
   (interactive)
   (find-file "~/Dropbox/bin/org/unix.org"))
