@@ -16,6 +16,7 @@
 	default = current
 [alias]
 	co = checkout
+    ps = push origin HEAD:refs/for/master
 [core]
 	editor = emacs
 [branch]
