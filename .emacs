@@ -29,9 +29,7 @@
 
 (add-hook 'html-mode-hook
           (lambda()
-            (setq sgml-basic-offset 4)
-            (setq indent-tabs-mode t)))
-
+            (setq sgml-basic-offset 4)))
 
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/Dropbox/bin/org")
