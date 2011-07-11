@@ -115,7 +115,8 @@
  '(objc-mode-hook (quote (objc-mode-fixes-hook)))
  '(safe-local-variable-values (quote ((sgml-basic-offset . 4) (tab-always-indent . t) (c-tab-always-indent . t))))
  '(show-paren-style (quote expression))
- '(show-trailing-whitespace t))
+ '(show-trailing-whitespace t)
+ '(vc-follow-symlinks nil))
 
 (setq suggest-key-bindings t)
 (global-set-key [?\C-=] 'shrink-window-horizontally)
@@ -157,8 +158,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
-  ;; '(default ((t (:stipple nil :background "#000" :foreground "gray78" :inverse-video nil :box nil ...))))
-  '(default ((t (:stipple nil :background "#000" :foreground "gray78" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 125 :width normal :family "apple-bitstream vera sans mono"))))
+ '(default ((t (:stipple nil :background "#000" :foreground "gray78" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 125 :width normal :family "apple-bitstream vera sans mono"))))
  '(border ((t (:background "black" :foreground "black"))))
  '(cursor ((t (:background "red2"))))
  '(font-lock-builtin-face ((t (:foreground "#00AAFF"))))
@@ -169,22 +169,16 @@
  '(font-lock-string-face ((t (:foreground "#FC0"))))
  '(font-lock-type-face ((t (:foreground "#A9B9F9"))))
  '(font-lock-variable-name-face ((t (:foreground "yellow"))))
-;; '(fringe ((t (:background "black" :foreground "gray50"))))
  '(fringe ((t (:background "black" :foreground "blue"))))
  '(highlight ((t (:background "#222"))))
  '(minibuffer-prompt ((((background dark)) (:foreground "dark gray"))))
- ;; active buffer
-; '(mode-line ((t (:background "blue" :foreground "gray55"))))
  '(mode-line ((t (:background "black" :foreground "green"))))
  '(mode-line-buffer-id ((t (:weight bold))))
  '(mode-line-highlight ((t (:inherit highlight))))
- ;; unactive buffers
-;; '(mode-line-inactive ((nil (:background "green" :foreground "gray28"))))
  '(mode-line-inactive ((nil (:background "black" :foreground "white"))))
  '(region ((t (:background "#111"))))
  '(scroll-bar ((t (:background "grey75" :foreground "black"))))
  '(show-paren-match ((((class color)) (:background "#232323"))))
-;; '(trailing-whitespace ((((class color) (background dark)) (:background "gray18"))))
  '(trailing-whitespace ((((class color) (background dark)) (:background "orange"))))
  '(vertical-border ((nil nil)))
  '(volume-bar ((t (:weight bold)))))
@@ -322,6 +316,10 @@
 (defun tap ()
   (interactive)
   (find-file "~/Dropbox/bin/org/tapulous.org"))
+
+(defun biz ()
+  (interactive)
+  (find-file "~/Dropbox/bin/org/biz.org"))
 
 ;; my macros
 (fset 'pipe
