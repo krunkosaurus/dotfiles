@@ -321,12 +321,9 @@
   (interactive)
   (find-file "~/Dropbox/bin/org/biz.org"))
 
-;; my macros
-(fset 'pipe
-   [?| down left])
-
-(fset 'moveleft
-   [?\C-  ?\C-e ?\C-w ?\C-a ?\C-y ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ? ])
+(defun c ()
+  (interactive)
+  (find-file "~/Dropbox/bin/org/c.org"))
 
 ; in dired mode you can use 'a' instead of o to open links in same window
 (put 'dired-find-alternate-file 'disabled nil)
