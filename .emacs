@@ -12,6 +12,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
 (setq tab-width 4)
+;;; Prevent Extraneous Tabs
 (setq-default indent-tabs-mode nil)
 (set-default 'indicate-empty-lines t)
 (menu-bar-mode 0)
@@ -38,10 +39,10 @@
   )
 (add-hook 'php-mode-hook 'my-php-mode-common-hook)
 
-;;(add-hook 'html-mode-hook
-;;          (lambda()
-;;            (setq sgml-basic-offset 4)
-;;))
+(add-hook 'html-mode-hook
+          (lambda()
+            (setq sgml-basic-offset 4)
+           ))
 
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/Dropbox/bin/org")
