@@ -17,6 +17,10 @@ function tma (){
     tmux attach -t $1
 }
 
+function tmn (){
+    tmux new-session -s $1
+}
+
 function dp {
     P=`pwd`
     cd ~/.dotfiles/
