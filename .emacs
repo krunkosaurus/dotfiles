@@ -147,7 +147,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; shortcuts
 (defalias 'dtw 'delete-trailing-whitespace)
-(defalias 'rv 'revert-buffer)
+(defalias 'rb 'revert-buffer)
 
 (defun objc-mode-fixes-hook ()
   "Hook to customize objc-mode the way I want it."
@@ -316,6 +316,10 @@
 (defun unix ()
   (interactive)
   (find-file "~/Dropbox/bin/org/unix.org"))
+
+(defun skype ()
+  (interactive)
+  (find-file "~/Dropbox/bin/org/skype.org"))
 
 (defun tap ()
   (interactive)
