@@ -11,6 +11,8 @@
 (setq x-select-enable-clipboard t)
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
+;; needed to run newest version of org
+
 (setq tab-width 4)
 ;;; Prevent Extraneous Tabs
 (setq-default indent-tabs-mode nil)
@@ -143,8 +145,9 @@
 (setq auto-mode-alist (append '(("\\.htm$" . html-mode)) auto-mode-alist))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
-;; shortcut
+;; shortcuts
 (defalias 'dtw 'delete-trailing-whitespace)
+(defalias 'rv 'revert-buffer)
 
 (defun objc-mode-fixes-hook ()
   "Hook to customize objc-mode the way I want it."

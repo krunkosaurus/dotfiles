@@ -97,13 +97,9 @@ function rs {
 	rsync -zrpthP $@
 }
 
-function diffm {
-
-	diff -wb  --normal $1 ../../kickapps_4_3_9/kickapps/$1 | mate
-
-}
-
 alias flush="dscacheutil -flushcache"
+alias hs='hg status'
+alias hd='hg diff'
 alias gs='git status'
 alias gul='git pull'
 alias gush='git push'
@@ -165,5 +161,5 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # TODO: should be for newdev only
-export PATH=~/server/build-tools:$PATH
+export PATH=/Developer/usr/bin:$PATH
 
