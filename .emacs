@@ -25,7 +25,7 @@
 ; Don't clutter up directories with files~
 ;(setq backup-directory-alist `(("." . ,(expand-file-name
 ;                                        (concat dotfiles-dir "backups")))))
-
+;; php-mode
 (autoload 'php-mode "~/.emacs.d/site-lisp/php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
@@ -40,6 +40,10 @@
   (c-set-offset 'arglist-intro '+)
   )
 (add-hook 'php-mode-hook 'my-php-mode-common-hook)
+
+;; sass-mode
+(autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
+(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
 
 (add-hook 'html-mode-hook
           (lambda()
