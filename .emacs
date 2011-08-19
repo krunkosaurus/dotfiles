@@ -29,6 +29,7 @@
 (autoload 'php-mode "~/.emacs.d/site-lisp/php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
 (defun my-php-mode-common-hook ()
   ;; my customizations for php-mode
   (setq tab-width 4)
@@ -143,7 +144,7 @@
 
 (setq auto-mode-alist (append '(("\\.mod$" . php-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.tpl$" . php-mode)) auto-mode-alist))
-(setq auto-mode-alist (append '(("\\.js$" . c-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '(("\\.js$" . js-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.html$" . html-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.yaws$" . html-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.htm$" . html-mode)) auto-mode-alist))
@@ -269,6 +270,8 @@
 (add-to-list 'load-path
              "~/.emacs.d/site-lisp/yasnippet")
 (require 'yasnippet-bundle)
+(set-face-background  'yas/field-highlight-face nil)
+;;(set-face-background  'yas/mirror-highlight-face "Grey10")
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/site-lisp/yasnippet/snippets")
 
