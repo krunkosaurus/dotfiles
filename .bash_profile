@@ -40,13 +40,14 @@ function ds {
     cd $P
 }
 
-
 function af {
     P=`pwd`
     cd ~/Documents/git/skype3/
     ant forward
     cd $P
 }
+
+alias n='sudo emacs /etc/nginx/nginx.conf'
 
 EVENT_NOKQUEUE=1
 # To use PWD should be inside an artist folder in itunes to share a spec album
