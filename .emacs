@@ -25,10 +25,11 @@
 ; Don't clutter up directories with files~
 ;(setq backup-directory-alist `(("." . ,(expand-file-name
 ;                                        (concat dotfiles-dir "backups")))))
-
+;; php-mode
 (autoload 'php-mode "~/.emacs.d/site-lisp/php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.tmpl$" . html-mode))
 (defun my-php-mode-common-hook ()
   ;; my customizations for php-mode
   (setq tab-width 4)
@@ -40,6 +41,10 @@
   (c-set-offset 'arglist-intro '+)
   )
 (add-hook 'php-mode-hook 'my-php-mode-common-hook)
+
+;; sass-mode
+(autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
+(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
 
 (add-hook 'html-mode-hook
           (lambda()
@@ -139,7 +144,7 @@
 
 (setq auto-mode-alist (append '(("\\.mod$" . php-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.tpl$" . php-mode)) auto-mode-alist))
-(setq auto-mode-alist (append '(("\\.js$" . c-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '(("\\.js$" . js-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.html$" . html-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.yaws$" . html-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.htm$" . html-mode)) auto-mode-alist))
@@ -147,7 +152,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; shortcuts
 (defalias 'dtw 'delete-trailing-whitespace)
-(defalias 'rv 'revert-buffer)
+(defalias 'rb 'revert-buffer)
 
 (defun objc-mode-fixes-hook ()
   "Hook to customize objc-mode the way I want it."
@@ -265,6 +270,8 @@
 (add-to-list 'load-path
              "~/.emacs.d/site-lisp/yasnippet")
 (require 'yasnippet-bundle)
+(set-face-background  'yas/field-highlight-face nil)
+;;(set-face-background  'yas/mirror-highlight-face "Grey10")
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/site-lisp/yasnippet/snippets")
 
@@ -316,6 +323,10 @@
 (defun unix ()
   (interactive)
   (find-file "~/Dropbox/bin/org/unix.org"))
+
+(defun skype ()
+  (interactive)
+  (find-file "~/Dropbox/bin/org/skype.org"))
 
 (defun tap ()
   (interactive)

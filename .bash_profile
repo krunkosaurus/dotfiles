@@ -11,7 +11,6 @@ function r() {
     fi
   fi
 }
-
 alias tmls='tmux ls'
 function tma (){
     tmux attach -t $1
@@ -38,6 +37,14 @@ function ds {
     P=`pwd`
     cd ~/.dotfiles/
     git diff
+    cd $P
+}
+
+
+function af {
+    P=`pwd`
+    cd ~/Documents/git/skype3/
+    ant forward
     cd $P
 }
 
