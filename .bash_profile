@@ -44,6 +44,7 @@ function af {
     cd $P
 }
 
+EDITOR=emacs;export EDITOR
 EVENT_NOKQUEUE=1
 # To use PWD should be inside an artist folder in itunes to share a spec album
 function ship {
@@ -69,22 +70,6 @@ function ship {
     echo 'total time:' $(( $(date +%s) - $STARTTIME )) 'seconds.'
 }
 
-#for syncing js from dream to qa and pro
-function c {
-    ssh readystate4.com "cd readystate4.com/ws/;. tools/concat.sh;. tools/updateallrevs.sh"
-}
-
-#for livepress
-alias o="ssh -vR 8081:localhost:8081 krunkosaurus@sadbot.com"
-
-function diffwidgets {
-       ssh krunkosaurus.com "cd readystate4.com;cd ws;git diff" | mate;
-}
-
-function diffnewdev {
-       ssh mauvis@newdev.tapulous.com "cd server;git diff" | mate;
-}
-
 function grepmod (){
         if [ $2 ]
         then
@@ -106,6 +91,7 @@ alias hd='hg diff'
 alias gs='git status'
 alias gul='git pull'
 alias gush='git push'
+alias gldr='git log --date=relative'
 alias gd='git diff'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
@@ -113,8 +99,11 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gitlog='git log --since="2 weeks ago" --date="relative" --stat'
 alias gitlogme='git log --date=relative --stat --author="Mauvis"'
+alias gls='git log --date="relative" --stat'
 alias glp='git log --date="relative" -p'
 alias sv='svn log -r HEAD:BASE -v  | more'
+alias gsr='git svn rebase'
+alias gsd='git svn dcommit'
 alias ip='ifconfig | grep "inet 192"'
 alias pro='emacs ~/.dotfiles/.bash_profile'
 alias repro='. ~/.dotfiles/.bash_profile'
@@ -138,7 +127,7 @@ function ttfb {
 }
 
 function sd {
-	svn diff -x --ignore-eol-style $1 | mate
+	/opt/local/bin/svn diff -x --ignore-eol-style $1 | mate
 }
 
 function sl {

@@ -57,6 +57,7 @@
 (setq org-mobile-inbox-for-pull "~/Dropbox/bin/org/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
+;;(setq org-export-with-sub-superscripts nil)
 
 ;; (setq mac-allow-anti-aliasing nil)
 (defun mac-toggle-max-window ()
