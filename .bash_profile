@@ -16,6 +16,10 @@ function tma (){
     tmux attach -t $1
 }
 
+function tmn (){
+    tmux new-session -s $1
+}
+
 function dp {
     P=`pwd`
     cd ~/.dotfiles/
@@ -36,7 +40,6 @@ function ds {
     cd $P
 }
 
-
 function af {
     P=`pwd`
     cd ~/Documents/git/skype3/
@@ -45,6 +48,8 @@ function af {
 }
 
 EDITOR=emacs;export EDITOR
+alias n='sudo emacs /etc/nginx/nginx.conf'
+
 EVENT_NOKQUEUE=1
 # To use PWD should be inside an artist folder in itunes to share a spec album
 function ship {
