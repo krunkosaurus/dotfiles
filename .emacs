@@ -42,6 +42,18 @@
   )
 (add-hook 'php-mode-hook 'my-php-mode-common-hook)
 
+;; launchpad required by org2blog
+(require 'xml-rpc)
+;; org2blog
+;;(setq load-path (cons "~/.emacs.d/org2blog/" load-path))
+(require 'org2blog-autoloads)
+(setq org2blog/wp-blog-alist
+       '(("wordpress"
+          :url "http://readystate4.com/xmlrpc.php"
+          :username "admin"
+          :default-title "Hello World"
+          :tags-as-categories nil)))
+
 ;; sass-mode
 (autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
