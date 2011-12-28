@@ -127,6 +127,9 @@ alias sup='svn update'
 alias ss='svn status'
 alias sin='svn info'
 
+# search for port 22 locally
+alias n='nmap -v -A --open 192.168.1.2-255 -p22'
+
 function ttfb {
         curl -o /dev/null -w "Connect: %{time_connect} TTFB: %{time_starttransfer} Total time: %{time_total} \n" $1
 }
