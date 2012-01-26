@@ -70,8 +70,7 @@ function ship {
 
     echo 'Transfer Complete.'
     #read -p "Delete zip? (y/n)?"
-    #[ "$REPLY" == "n" ] || 
-	rm "$ZIPTITLE".zip
+    #[ "$REPLY" == "n" ] || rm "$ZIPTITLE".zip
     echo 'total time:' $(( $(date +%s) - $STARTTIME )) 'seconds.'
 }
 
@@ -160,3 +159,15 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # TODO: should be for newdev only
 export PATH=/Developer/usr/bin:$PATH
 
+
+function gdaily {
+    NEXT=$(date +%F)
+    echo "CHANGELOG"
+    echo ----------------------
+    git log --no-merges --format="%cd" --date=short | sort -u -r | while read DATE ; do
+        echo
+        echo [$DATE]
+        GIT_PAGER=cat git log --no-merges --format=" * %s" --since=$DATE --until=$NEXT
+        NEXT=$DATE
+    done
+}
