@@ -174,3 +174,7 @@ function gdaily {
         NEXT=$DATE
     done
 }
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+
