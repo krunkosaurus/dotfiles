@@ -349,6 +349,10 @@
   (interactive)
   (find-file "~/Dropbox/bin/org/biz.org"))
 
+(defun pathbrite ()
+  (interactive)
+  (find-file "~/Dropbox/bin/org/pathbrite.org"))
+
 (defun c ()
   (interactive)
   (find-file "~/Dropbox/bin/org/c.org"))
