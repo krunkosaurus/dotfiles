@@ -57,6 +57,7 @@
 ;; sass-mode
 (autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
+(add-to-list 'auto-mode-alist '("\\.jakeFile$" . js-mode))
 
 (add-hook 'html-mode-hook
           (lambda()
