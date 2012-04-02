@@ -11,6 +11,9 @@ function r() {
     fi
   fi
 }
+
+alias d2u='find . -type f \! -path "*svn*" -exec dos2unix {} \;'
+
 alias tmls='tmux ls'
 function tma (){
     tmux attach -t $1
@@ -159,9 +162,6 @@ function sc {
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-# TODO: should be for newdev only
-export PATH=/Developer/usr/bin:$PATH
-
 
 function gdaily {
     NEXT=$(date +%F)
@@ -175,6 +175,6 @@ function gdaily {
     done
 }
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
+export PATH=/opt/local/bin:/opt/local/sbin:/Applications/MAMP/Library/bin/:$PATH
+alias m="memcached -d -m 24 -p 11211"
 

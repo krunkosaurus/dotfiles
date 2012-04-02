@@ -22,5 +22,6 @@
     ps = push origin HEAD:refs/for/master
 [core]
 	editor = emacs
+	autocrlf = input
 [branch]
 	autosetupmerge = true
