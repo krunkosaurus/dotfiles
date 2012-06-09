@@ -23,8 +23,7 @@
 ; default to unified diffs
 (setq diff-switches "-u")
 ; Don't clutter up directories with files~
-;(setq backup-directory-alist `(("." . ,(expand-file-name
-;                                        (concat dotfiles-dir "backups")))))
+
 ;; php-mode
 (autoload 'php-mode "~/.emacs.d/site-lisp/php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
@@ -57,7 +56,8 @@
 ;; sass-mode
 (autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
-(add-to-list 'auto-mode-alist '("\\.jakeFile$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\Jakefile$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.jake$" . js-mode))
 
 (add-hook 'html-mode-hook
           (lambda()
