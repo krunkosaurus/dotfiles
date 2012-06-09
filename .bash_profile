@@ -116,6 +116,7 @@ alias pro='emacs ~/.dotfiles/.bash_profile'
 alias repro='. ~/.dotfiles/.bash_profile'
 alias conf='mate /Applications/MAMP/conf/apache/httpd.conf'
 alias etc='sudo nano /etc/hosts'
+alias ra='sudo apachectl restart'
 
 alias cdo='cd ~/Dropbox/bin/org'
 alias cdg='cd ~/Documents/git'
@@ -159,7 +160,7 @@ function sc {
 ##
 
 # MacPorts Installer addition on 2010-12-22_at_12:04:20: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
@@ -175,6 +176,14 @@ function gdaily {
     done
 }
 
-export PATH=/opt/local/bin:/opt/local/sbin:/Applications/MAMP/Library/bin/:$PATH
+# export PATH=/opt/local/bin:/opt/local/sbin:/Applications/MAMP/Library/bin/:$PATH
 alias m="memcached -d -m 24 -p 11211"
 
+# Used for AWS APIS
+export JAVA_HOME=$(/usr/libexec/java_home)
+export EC2_HOME=/Users/krunkosaurus/Dropbox/aws-ec2
+export AWS_RDS_HOME=/Users/krunkosaurus/Dropbox/aws-rds
+export PATH="$EC2_HOME/bin:$AWS_RDS_HOME/bin:$PATH"
+export EC2_KEY_DIR=/Users/krunkosaurus/Dropbox/aws-keys
+export EC2_PRIVATE_KEY=/Users/krunkosaurus/Dropbox/aws-keys/pk-DY5TBQ7EHM4NZ5TMC4TXDRI6CKB77FDE.pem
+export EC2_CERT=/Users/krunkosaurus/Dropbox/aws-keys/cert-DY5TBQ7EHM4NZ5TMC4TXDRI6CKB77FDE.pem
