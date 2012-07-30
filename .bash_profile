@@ -175,7 +175,8 @@ function gdaily {
     done
 }
 
-# export PATH=/opt/local/bin:/opt/local/sbin:/Applications/MAMP/Library/bin/:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
 alias m="memcached -d -m 24 -p 11211"
 
 . ~/.dotfiles/z.sh
