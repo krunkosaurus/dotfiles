@@ -114,7 +114,6 @@ alias gsd='git svn dcommit'
 alias ip='ifconfig | grep "inet 192"'
 alias pro='emacs ~/.dotfiles/.bash_profile'
 alias repro='. ~/.dotfiles/.bash_profile'
-alias conf='mate /Applications/MAMP/conf/apache/httpd.conf'
 alias etc='sudo nano /etc/hosts'
 alias ra='sudo apachectl restart'
 
@@ -178,6 +177,8 @@ function gdaily {
 
 # export PATH=/opt/local/bin:/opt/local/sbin:/Applications/MAMP/Library/bin/:$PATH
 alias m="memcached -d -m 24 -p 11211"
+
+. ~/.dotfiles/z.sh
 
 # Used for AWS APIS
 export JAVA_HOME=$(/usr/libexec/java_home)
