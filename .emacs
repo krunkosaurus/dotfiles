@@ -56,7 +56,8 @@
 ;; sass-mode
 (autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
-(add-to-list 'auto-mode-alist '("\\Jakefile$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.Jakefile" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.jake$" . js-mode))
 
 (add-hook 'html-mode-hook
@@ -338,13 +339,9 @@
   (interactive)
   (find-file "~/Dropbox/bin/org/unix.org"))
 
-(defun skype ()
+(defun node ()
   (interactive)
-  (find-file "~/Dropbox/bin/org/skype.org"))
-
-(defun tap ()
-  (interactive)
-  (find-file "~/Dropbox/bin/org/tapulous.org"))
+  (find-file "~/Dropbox/bin/org/node.org"))
 
 (defun biz ()
   (interactive)
