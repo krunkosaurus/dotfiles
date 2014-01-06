@@ -11,3 +11,6 @@ ln -is $DIR/site-lisp .emacs.d/site-lisp
 
 source ~/.bash_profile
 cd $DIR
+
+git submodules init
+git submodules update
