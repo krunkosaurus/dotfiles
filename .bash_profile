@@ -23,33 +23,6 @@ function tmn (){
     tmux new-session -s $1
 }
 
-function dp {
-    P=`pwd`
-    cd ~/.dotfiles/
-    git commit -av
-    git push
-    cd $P
-}
-function df {
-    P=`pwd`
-    cd ~/.dotfiles/
-    git pull
-    cd $P
-}
-function ds {
-    P=`pwd`
-    cd ~/.dotfiles/
-    git diff
-    cd $P
-}
-
-function af {
-    P=`pwd`
-    cd ~/Documents/git/skype3/
-    ant forward
-    cd $P
-}
-
 EDITOR=emacs;export EDITOR
 alias n='sudo emacs /etc/nginx/nginx.conf'
 
@@ -182,7 +155,7 @@ alias m="memcached -d -m 24 -p 11211"
 . ~/.dotfiles/z.sh
 
 # Used for AWS APIS
-export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=$(/usr/libexec/java_home)
 export EC2_HOME=/Users/krunkosaurus/Dropbox/aws-ec2
 export AWS_RDS_HOME=/Users/krunkosaurus/Dropbox/aws-rds
 export PATH="$EC2_HOME/bin:$AWS_RDS_HOME/bin:$PATH"
