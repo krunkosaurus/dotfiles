@@ -57,6 +57,7 @@
 (autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
 (add-to-list 'auto-mode-alist '("\\.Jakefile" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.jshintrc" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.jake$" . js-mode))
 
@@ -371,3 +372,6 @@
    "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+(setq js-indent-level 2)
+;;(setq javascript-indent-level 2)
