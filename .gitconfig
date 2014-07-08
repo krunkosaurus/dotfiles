@@ -1,3 +1,29 @@
+[github]
+    user = krunkosaurus
+[user]
+	name = Mauvis Ledford
+	email = mauvis@brainswap.me
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+	ui = true
+[tig]
+   show-date = relative
+   author-width = 5
+   show-rev-graph = yes
+[push]
+	default = current
+[pull]
+	default = current
+[alias]
+	co = checkout
+    ps = push origin HEAD:refs/for/master
+[core]
+	editor = emacs
+	autocrlf = input
+[branch]
+	autosetupmerge = true
 [alias]
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -123,25 +149,3 @@
 	# installations. To use `simple` instead, add this to your `~/.extra` file:
 	# `git config --global push.default simple`. See http://git.io/mMah-w.
 	default = matching
-
-# URL shorthands
-
-[url "git@github.com:"]
-
-	insteadOf = "gh:"
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-
-[url "git://github.com/"]
-
-	insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-
-	insteadOf = "gst:"
-	pushInsteadOf = "gist:"
-	pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-
-	insteadOf = "gist:"
