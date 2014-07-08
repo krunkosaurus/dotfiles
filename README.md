@@ -1,4 +1,4 @@
-# Mathias’s dotfiles
+# Krunkosaurus’s dotfiles
 
 ![Screenshot of my shell prompt](http://sadbot.com/up/2014_07_08_commandline.png)
 
