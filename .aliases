@@ -5,6 +5,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Shortcuts
+alias cdg="cd ~/Documents/git"
 alias cdrop="cd ~/Documents/Dropbox"
 alias cdoc="cd ~/Documents"
 alias cdown="cd ~/Downloads"

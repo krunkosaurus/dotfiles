@@ -5,8 +5,9 @@ function throw() {
     echo http://sadbot.com/up/${DATE}_${1} | pbcopy;
     echo "Copied to clipboard: http://sadbot.com/up/${DATE}_${1}"
 }
+alias list="ssh sadbot './list.sh'"
 
-# Used to reattach ssh forwarding to "stale" tmux sessions 
+# Used to reattach ssh forwarding to "stale" tmux sessions
 # http://justinchouinard.com/blog/2010/04/10/fix-stale-ssh-environment-variables-in-gnu-screen-and-tmux/
 function r() {
   if [[ -n $TMUX ]]; then
