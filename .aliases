@@ -5,11 +5,12 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Shortcuts
+alias cdd="cd ~/Documents"
 alias cdg="cd ~/Documents/git"
-alias cdrop="cd ~/Documents/Dropbox"
-alias cdoc="cd ~/Documents"
-alias cdown="cd ~/Downloads"
-alias cdesk="cd ~/Desktop"
+alias cdr="cd ~/Dropbox"
+alias cde="cd ~/Desktop"
+alias cdo="cd ~/Downloads"
+
 alias g="git"
 alias h="history"
 alias j="jobs"

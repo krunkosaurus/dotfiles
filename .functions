@@ -4,6 +4,7 @@ function throw() {
     scp "$1" sadbot:/var/www/html/sadbot.com/up/${DATE}_${1};
     echo http://sadbot.com/up/${DATE}_${1} | pbcopy;
     echo "Copied to clipboard: http://sadbot.com/up/${DATE}_${1}"
+    mv ${1} ${DATE}_${1}
 }
 alias list="ssh sadbot './list.sh'"
 
