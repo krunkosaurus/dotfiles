@@ -41,18 +41,6 @@
   )
 (add-hook 'php-mode-hook 'my-php-mode-common-hook)
 
-;; launchpad required by org2blog
-(require 'xml-rpc)
-;; org2blog
-;;(setq load-path (cons "~/.emacs.d/org2blog/" load-path))
-(require 'org2blog-autoloads)
-(setq org2blog/wp-blog-alist
-       '(("wordpress"
-          :url "http://readystate4.com/xmlrpc.php"
-          :username "admin"
-          :default-title "Hello World"
-          :tags-as-categories nil)))
-
 ;; sass-mode
 (autoload 'sass-mode "~/.emacs.d/site-lisp/sass-mode" t)
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
@@ -60,6 +48,8 @@
 (add-to-list 'auto-mode-alist '("\\.jshintrc" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.jake$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.functions$" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.aliases$" . sh-mode))
 
 (add-hook 'html-mode-hook
           (lambda()
@@ -332,10 +322,6 @@
   (interactive)
   (find-file "~/Dropbox/bin/org/git.org"))
 
-(defun mongo ()
-  (interactive)
-  (find-file "~/Dropbox/bin/org/mongo.org"))
-
 (defun unix ()
   (interactive)
   (find-file "~/Dropbox/bin/org/unix.org"))
@@ -343,14 +329,6 @@
 (defun node ()
   (interactive)
   (find-file "~/Dropbox/bin/org/node.org"))
-
-(defun biz ()
-  (interactive)
-  (find-file "~/Dropbox/bin/org/biz.org"))
-
-(defun pathbrite ()
-  (interactive)
-  (find-file "~/Dropbox/bin/org/pathbrite.org"))
 
 (defun c ()
   (interactive)
@@ -375,3 +353,10 @@
 
 (setq js-indent-level 2)
 ;;(setq javascript-indent-level 2)
+
+(setq backup-directory-alist
+          `((".*" . ,temporary-file-directory)))
+    (setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
+
+(setq create-lockfiles nil)
