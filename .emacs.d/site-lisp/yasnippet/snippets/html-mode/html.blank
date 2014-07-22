@@ -1,0 +1,11 @@
+#name : Blank page
+# --
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>$1</title>
+</head>
+<body>
+$2
+</body>
+</html>
