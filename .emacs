@@ -155,6 +155,9 @@
 (setq auto-mode-alist (append '(("\\.yaws$" . html-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("\\.htm$" . html-mode)) auto-mode-alist))
 
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; shortcuts
 (defalias 'dtw 'delete-trailing-whitespace)

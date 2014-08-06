@@ -1,12 +1,12 @@
 # Throw a file on to the server, timestamped.
 function throw() {
     DATE=$(date +"%Y_%m_%d")
-    scp "$1" sadbot:/var/www/html/sadbot.com/up/${DATE}_${1};
-    echo http://sadbot.com/up/${DATE}_${1} | pbcopy;
-    echo "Copied to clipboard: http://sadbot.com/up/${DATE}_${1}"
+    scp "$1" mauvis:/var/www/html/mauvis.io/up/${DATE}_${1};
+    echo http://mauvis.io/up/${DATE}_${1} | pbcopy;
+    echo "Copied to clipboard: http://mauvis.io/up/${DATE}_${1}"
     mv ${1} ${DATE}_${1}
 }
-alias list="ssh sadbot './list.sh'"
+alias list="ssh nnode './list.sh'"
 
 # Used to reattach ssh forwarding to "stale" tmux sessions
 # http://justinchouinard.com/blog/2010/04/10/fix-stale-ssh-environment-variables-in-gnu-screen-and-tmux/
