@@ -1,0 +1,2 @@
+- [ ] Make throw function work in any directory.
+- [ ] Merge emacs preference files
