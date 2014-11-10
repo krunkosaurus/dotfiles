@@ -1,7 +1,7 @@
 alias e=/Applications/Emacs.app;export e;
 # irc port fowarding for work around when i'm tethered
 alias irc='ssh -vD 6667 sadbot'
-# used to reattach ssh forwarding to "stale" tmux sessions 
+# used to reattach ssh forwarding to "stale" tmux sessions
 # http://justinchouinard.com/blog/2010/04/10/fix-stale-ssh-environment-variables-in-gnu-screen-and-tmux/
 function r() {
   if [[ -n $TMUX ]]; then
@@ -66,17 +66,12 @@ function rs {
 }
 
 alias flush="dscacheutil -flushcache"
-alias hs='hg status'
-alias hd='hg diff'
-alias gs='git status'
+
 alias gul='git pull'
 alias gush='git push'
 alias gldr='git log --date=relative'
 alias gd='git diff'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gb='git branch'
-alias gba='git branch -a'
+
 alias gitlog='git log --since="2 weeks ago" --date="relative" --stat'
 alias gitlogme='git log --date=relative --stat --author="Mauvis"'
 alias gls='git log --date="relative" --stat'
@@ -85,9 +80,7 @@ alias sv='svn log -r HEAD:BASE -v  | more'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias ip='ifconfig | grep "inet 192"'
-alias pro='emacs ~/.dotfiles/.bash_profile'
-alias repro='. ~/.dotfiles/.bash_profile'
-alias etc='sudo nano /etc/hosts'
+
 alias ra='sudo apachectl restart'
 
 alias cdo='cd ~/Dropbox/bin/org'
@@ -162,3 +155,15 @@ export PATH="$EC2_HOME/bin:$AWS_RDS_HOME/bin:$PATH"
 export EC2_KEY_DIR=/Users/krunkosaurus/Dropbox/aws-keys
 export EC2_PRIVATE_KEY=/Users/krunkosaurus/Dropbox/aws-keys/pk-DY5TBQ7EHM4NZ5TMC4TXDRI6CKB77FDE.pem
 export EC2_CERT=/Users/krunkosaurus/Dropbox/aws-keys/cert-DY5TBQ7EHM4NZ5TMC4TXDRI6CKB77FDE.pem
+
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
+
+
+export PATH=/usr/local/bin:$PATH
