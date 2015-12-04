@@ -275,6 +275,15 @@
 (require 'uniquify)
 (autoload 'magit-status "magit" nil t)
 
+(require 'dash)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/magit/lisp")
+(require 'magit)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/.emacs.d/site-lisp/magit/Documentation/"))
+
 ;; yasnippet
 (add-to-list 'load-path
              "~/.emacs.d/site-lisp/yasnippet")
@@ -298,14 +307,6 @@
 			(local-set-key (kbd "C-c <up>")    'hs-hide-all)
 			(local-set-key (kbd "C-c <down>")  'hs-show-all)
 			(hs-minor-mode t)))
-
-;; change magit diff colors
-(eval-after-load 'magit
-  '(progn
-     (set-face-foreground 'magit-diff-add "green3")
-     (set-face-foreground 'magit-diff-del "red3")
-     (when (not window-system)
-       (set-face-background 'magit-item-highlight "black"))))
 
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 (eval-after-load 'diff-mode
