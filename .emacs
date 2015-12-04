@@ -96,15 +96,21 @@
 (menu-bar-mode -1)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(Info-additional-directory-list (quote ("/usr/share/info")))
  '(asm-comment-char 35)
  '(c-auto-align-backslashes nil)
  '(c-block-comment-prefix "")
- '(c-default-style (quote ((c-mode . "gnu") (objc-mode . "gnu") (java-mode . "java") (awk-mode . "awk") (other . "gnu"))))
+ '(c-default-style
+   (quote
+    ((c-mode . "gnu")
+     (objc-mode . "gnu")
+     (java-mode . "java")
+     (awk-mode . "awk")
+     (other . "gnu"))))
  '(c-echo-syntactic-information-p nil)
  '(c-indent-comments-syntactically-p t)
  '(c-report-syntactic-errors nil)
@@ -127,7 +133,11 @@
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
  '(objc-mode-hook (quote (objc-mode-fixes-hook)))
- '(safe-local-variable-values (quote ((sgml-basic-offset . 4) (tab-always-indent . t) (c-tab-always-indent . t))))
+ '(safe-local-variable-values
+   (quote
+    ((sgml-basic-offset . 4)
+     (tab-always-indent . t)
+     (c-tab-always-indent . t))))
  '(show-paren-style (quote expression))
  '(show-trailing-whitespace t)
  '(vc-follow-symlinks nil))
@@ -172,10 +182,10 @@
 (set-cursor-color "#6677FF")
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:stipple nil :background "#000" :foreground "gray78" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 125 :width normal :family "apple-bitstream vera sans mono"))))
  '(border ((t (:background "black" :foreground "black"))))
  '(cursor ((t (:background "red2"))))
@@ -189,6 +199,15 @@
  '(font-lock-variable-name-face ((t (:foreground "yellow"))))
  '(fringe ((t (:background "black" :foreground "blue"))))
  '(highlight ((t (:background "#222"))))
+ '(magit-bisect-bad ((t (:foreground "red"))))
+ '(magit-diff-added ((t (:foreground "green"))))
+ '(magit-diff-added-highlight ((t (:foreground "green"))))
+ '(magit-diff-context-highlight ((t (:foreground "grey70"))))
+ '(magit-diff-removed ((t (:foreground "red"))))
+ '(magit-diff-removed-highlight ((t (:foreground "red"))))
+ '(magit-diffstat-added ((t (:foreground "green"))))
+ '(magit-diffstat-removed ((t (:foreground "red"))))
+ '(magit-dimmed ((t nil)))
  '(minibuffer-prompt ((((background dark)) (:foreground "dark gray"))))
  '(mode-line ((t (:background "black" :foreground "green"))))
  '(mode-line-buffer-id ((t (:weight bold))))
@@ -275,6 +294,15 @@
 (require 'uniquify)
 (autoload 'magit-status "magit" nil t)
 
+(require 'dash)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/magit/lisp")
+(require 'magit)
+
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/.emacs.d/site-lisp/magit/Documentation/"))
+
 ;; yasnippet
 (add-to-list 'load-path
              "~/.emacs.d/site-lisp/yasnippet")
@@ -298,14 +326,6 @@
 			(local-set-key (kbd "C-c <up>")    'hs-hide-all)
 			(local-set-key (kbd "C-c <down>")  'hs-show-all)
 			(hs-minor-mode t)))
-
-;; change magit diff colors
-(eval-after-load 'magit
-  '(progn
-     (set-face-foreground 'magit-diff-add "green3")
-     (set-face-foreground 'magit-diff-del "red3")
-     (when (not window-system)
-       (set-face-background 'magit-item-highlight "black"))))
 
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 (eval-after-load 'diff-mode
