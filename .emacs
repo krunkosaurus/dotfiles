@@ -53,7 +53,7 @@
 
 (add-hook 'html-mode-hook
           (lambda()
-            (setq sgml-basic-offset 4)
+            (setq sgml-basic-offset 2)
            ))
 
 ;; Set to the location of your Org files on your local system
